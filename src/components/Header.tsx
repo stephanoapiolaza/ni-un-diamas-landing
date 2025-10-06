@@ -15,7 +15,7 @@ const Header = () => {
               <a href="#" className="text-sm font-medium hover:text-muted-foreground transition-colors">
                 Más sobre
               </a>
-              <a href="mailto:info@niundiamas.org" className="text-sm font-medium hover:text-muted-foreground transition-colors flex items-center gap-1">
+              <a href="mailto:contacto@ni1diamas.cl" className="text-sm font-medium hover:text-muted-foreground transition-colors flex items-center gap-1">
                 <Mail className="h-4 w-4" />
                 Mail
               </a>
