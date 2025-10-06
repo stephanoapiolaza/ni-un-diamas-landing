@@ -20,7 +20,7 @@ const Footer = () => {
           <div className="flex items-center gap-6">
             <a href="mailto:info@niundiamas.org" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Mail className="h-5 w-5" />
-              <span className="text-sm">ni1diamas@</span>
+              <span className="text-sm">contacto@ni1diamas</span>
             </a>
           </div>
         </div>

@@ -3,15 +3,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Eye, Shield } from "lucide-react";
-
 const ActionSection = () => {
   const handleComplaintSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
   };
-
-  return (
-    <section className="py-16 px-4 bg-muted">
+  return <section className="py-16 px-4 bg-muted">
       <div className="container mx-auto max-w-6xl">
         <div className="grid md:grid-cols-2 gap-8">
           {/* Formulario de Denuncia */}
@@ -70,7 +67,10 @@ const ActionSection = () => {
               </p>
               
               <div className="bg-primary-foreground/10 p-4 rounded-sm mt-6">
-                <p className="text-sm font-medium mb-2">Cuenta Corriente:</p>
+                <p className="text-sm font-medium mb-2">Cuenta Corriente:  XXXX-XXXX-XXXX
+Banco:  Scotiabank
+Rut: 9.999.999-9
+Email: contacto@ni1diamas.cl</p>
                 <p className="text-xs opacity-90">Disponible para socios activos</p>
               </div>
               
@@ -81,8 +81,6 @@ const ActionSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ActionSection;
