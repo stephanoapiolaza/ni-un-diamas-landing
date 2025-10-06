@@ -4,29 +4,30 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-6">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <a href="https://www.instagram.com/ni1diamas_/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Instagram className="h-5 w-5" />
               <span className="text-sm">@ni1diamas_</span>
             </a>
           </div>
           
           <div className="flex items-center gap-6">
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <a href="https://www.youtube.com/@ni1diamas" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Youtube className="h-5 w-5" />
               <span className="text-sm">@ni1diamas</span>
             </a>
           </div>
           
           <div className="flex items-center gap-6">
-            <a href="mailto:info@niundiamas.org" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <a href="mailto:contacto@ni1diamas.cl?subject=Quiero%20apoyo%20para%20fortalecer%20el%20vínculo%20con%20mi%20hijo" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Mail className="h-5 w-5" />
-              <span className="text-sm">contacto@ni1diamas</span>
+              <span className="text-sm">contacto@ni1diamas.cl</span>
             </a>
           </div>
         </div>
         
         <div className="mt-8 pt-8 border-t border-primary-foreground/20 text-center">
-          <p className="text-sm opacity-80">© 2025 Ni Un Día Más. Todos los derechos reservados.</p>
+          <p className="text-sm opacity-80">© 2025 Ni Un Día Más</p>
+          <p className="text-sm opacity-80">Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>;

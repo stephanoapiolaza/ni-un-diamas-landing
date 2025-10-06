@@ -12,15 +12,15 @@ const Header = () => {
           
           <div className="flex items-center gap-6">
             <nav className="hidden md:flex items-center gap-4">
-              <a href="https://www.instagram.com/ni1diamas.cl/" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-muted-foreground transition-colors flex items-center gap-1">
+              <a href="https://www.instagram.com/ni1diamas_/" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-muted-foreground transition-colors flex items-center gap-1">
                 <Instagram className="h-4 w-4" />
-                Instagram
+                @ni1diamas_
               </a>
-              <a href="https://www.youtube.com/@ni1diamas.cl" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-muted-foreground transition-colors flex items-center gap-1">
+              <a href="https://www.youtube.com/@ni1diamas" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-muted-foreground transition-colors flex items-center gap-1">
                 <Youtube className="h-4 w-4" />
-                YouTube
+                @ni1diamas
               </a>
-              <a href="mailto:contacto@ni1diamas.cl" className="text-sm font-medium hover:text-muted-foreground transition-colors flex items-center gap-1">
+              <a href="mailto:contacto@ni1diamas.cl?subject=Quiero%20apoyo%20para%20fortalecer%20el%20vínculo%20con%20mi%20hijo" className="text-sm font-medium hover:text-muted-foreground transition-colors flex items-center gap-1">
                 <Mail className="h-4 w-4" />
                 contacto@ni1diamas.cl
               </a>

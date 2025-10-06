@@ -1,13 +1,45 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Eye, Shield } from "lucide-react";
+
 const ActionSection = () => {
+  const [isCopied, setIsCopied] = useState(false);
+
   const handleComplaintSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
   };
+
+  const handleCopyBankingData = async () => {
+    const bankingData = "Banco: Scotiabank | RUT: 9.999.999-9 | Tipo: Cuenta Corriente | Cuenta: 12345678 | Nombre: Rodrigo Smart";
+    
+    try {
+      await navigator.clipboard.writeText(bankingData);
+      setIsCopied(true);
+      // Volver al texto original después de 2 segundos
+      setTimeout(() => setIsCopied(false), 2000);
+    } catch (err) {
+      console.error("Error al copiar al portapapeles:", err);
+      // Fallback para navegadores que no soportan clipboard API
+      const textArea = document.createElement("textarea");
+      textArea.value = bankingData;
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        document.execCommand("copy");
+        setIsCopied(true);
+        setTimeout(() => setIsCopied(false), 2000);
+      } catch (fallbackErr) {
+        console.error("Error en el fallback de copia:", fallbackErr);
+      }
+      document.body.removeChild(textArea);
+    }
+  };
+
   return <section className="py-16 px-4 bg-muted">
       <div className="container mx-auto max-w-6xl">
         <div className="grid md:grid-cols-2 gap-8">
@@ -67,14 +99,20 @@ const ActionSection = () => {
               </p>
               
               <div className="bg-primary-foreground/10 p-4 rounded-sm mt-6">
-                <p className="text-sm font-medium mb-2">Cuenta Corriente:  XXXX-XXXX-XXXX 
-Banco:  Scotiabank 
-Rut: 9.999.999-9 Email: contacto@ni1diamas.cl</p>
+                <p className="text-sm font-medium mb-2">Cuenta Corriente: XXXX-XXXX-XXXX</p>
+                <p className="text-sm font-medium mb-2">Banco: Scotiabank</p>
+                <p className="text-sm font-medium mb-2">Nombre: Rodrigo Smart</p>
+                <p className="text-sm font-medium mb-2">RUT: 9.999.999-9</p>
+                <p className="text-sm font-medium mb-2">Email: contacto@ni1diamas.cl</p>
                 <p className="text-xs opacity-90">Disponible para socios activos</p>
               </div>
               
-              <Button variant="secondary" className="w-full mt-6">
-                Más Información
+              <Button 
+                variant="secondary" 
+                className="w-full mt-6"
+                onClick={handleCopyBankingData}
+              >
+                {isCopied ? "Copiado" : "Copiar Datos Bancarios"}
               </Button>
             </div>
           </div>
@@ -82,4 +120,5 @@ Rut: 9.999.999-9 Email: contacto@ni1diamas.cl</p>
       </div>
     </section>;
 };
+
 export default ActionSection;
