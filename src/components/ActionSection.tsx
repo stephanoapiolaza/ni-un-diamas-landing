@@ -4,13 +4,46 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Eye, Shield } from "lucide-react";
+import emailjs from '@emailjs/browser';
 
 const ActionSection = () => {
   const [isCopied, setIsCopied] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
 
-  const handleComplaintSubmit = (e: React.FormEvent) => {
+  const handleComplaintSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
+    setIsSubmitting(true);
+    setSubmitMessage("");
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    const templateParams = {
+      from_name: formData.get('name') as string,
+      from_email: formData.get('email') as string,
+      message: formData.get('message') as string,
+      to_email: 'ni1diamas@gmail.com'
+    };
+
+    try {
+      // Initialize EmailJS with your public key
+      emailjs.init("ObiQ5ZNTr5B3iUEAO"); // This needs to be replaced with actual EmailJS public key
+      
+      await emailjs.send(
+        "service_vu8bv0j", // This needs to be replaced with actual EmailJS service ID
+        "template_idktesp", // This needs to be replaced with actual EmailJS template ID
+        templateParams
+      );
+      
+      setSubmitMessage("¡Denuncia enviada exitosamente!");
+      form.reset();
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitMessage("Error al enviar la denuncia. Por favor, intenta nuevamente.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleCopyBankingData = async () => {
@@ -56,22 +89,28 @@ const ActionSection = () => {
             <form onSubmit={handleComplaintSubmit} className="space-y-4">
               <div>
                 <Label htmlFor="name">Nombre</Label>
-                <Input id="name" type="text" required />
+                <Input id="name" name="name" type="text" required />
               </div>
               
               <div>
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" required />
+                <Input id="email" name="email" type="email" required />
               </div>
               
               <div>
                 <Label htmlFor="message">Tu caso</Label>
-                <Textarea id="message" rows={4} required />
+                <Textarea id="message" name="message" rows={4} required />
               </div>
               
-              <Button type="submit" className="w-full">
-                Enviar Denuncia
+              <Button type="submit" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? "Enviando..." : "Enviar Denuncia"}
               </Button>
+              
+              {submitMessage && (
+                <p className={`text-sm text-center ${submitMessage.includes("Error") ? "text-red-500" : "text-green-500"}`}>
+                  {submitMessage}
+                </p>
+              )}
               
               <p className="text-xs text-muted-foreground text-center">
                 Ver más información sobre el proceso
