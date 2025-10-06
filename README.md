@@ -1,73 +1,130 @@
-# Welcome to your Lovable project
+# Ni Un Día Más - Landing Page
 
-## Project info
+## Descripción del Proyecto
 
-**URL**: https://lovable.dev/projects/2bc339fc-2221-42aa-8f59-ca3d5372cb0f
+**Ni Un Día Más - El Vínculo es un Derecho** es una landing page que representa a padres y madres que luchan por el derecho al vínculo con sus hijos. Esta plataforma busca crear conciencia sobre la justicia familiar y combatir la obstrucción de visitas, promoviendo el derecho fundamental de los niños a mantener relaciones con ambos padres.
 
-## How can I edit this code?
+## Características
 
-There are several ways of editing your application.
+- 🎨 Diseño moderno y responsivo con Tailwind CSS
+- ⚡ Desarrollo rápido con Vite
+- 🔧 Componentes reutilizables con Radix UI
+- 📱 Completamente responsive para todos los dispositivos
+- 🌐 Optimizado para SEO y redes sociales
+- 📋 Formularios interactivos con validación
 
-**Use Lovable**
+## Tecnologías Utilizadas
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2bc339fc-2221-42aa-8f59-ca3d5372cb0f) and start prompting.
+### Core
+- **React 18** - Biblioteca de interfaz de usuario
+- **TypeScript** - Tipado estático para JavaScript
+- **Vite** - Build tool y servidor de desarrollo
 
-Changes made via Lovable will be committed automatically to this repo.
+### Estilado y UI
+- **Tailwind CSS** - Framework de CSS utility-first
+- **Radix UI** - Componentes accesibles y sin estilo
+- **Lucide React** - Iconos modernos
+- **Next Themes** - Soporte para temas oscuros/claros
 
-**Use your preferred IDE**
+### Formularios y Validación
+- **React Hook Form** - Gestión de formularios performante
+- **Zod** - Validación de esquemas TypeScript-first
+- **Input OTP** - Componentes de entrada OTP
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Navegación y Estado
+- **React Router DOM** - Enrutamiento del lado del cliente
+- **TanStack Query** - Gestión de estado del servidor
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Desarrollo y Calidad
+- **ESLint** - Linter para JavaScript/TypeScript
+- **PostCSS** - Procesador de CSS
+- **Autoprefixer** - Autoprefijos CSS
 
-Follow these steps:
+## Instalación
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Prerrequisitos
+- Node.js (versión 18 o superior)
+- npm o yarn
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Pasos de Instalación
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+1. **Clonar el repositorio**
+```bash
+git clone [URL_DEL_REPOSITORIO]
+cd ni-un-diamas-landing
 ```
 
-**Edit a file directly in GitHub**
+2. **Instalar dependencias**
+```bash
+npm install
+# o
+yarn install
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+3. **Ejecutar en modo desarrollo**
+```bash
+npm run dev
+# o
+yarn dev
+```
 
-**Use GitHub Codespaces**
+4. **Abrir en el navegador**
+El proyecto estará disponible en `http://localhost:5173`
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Scripts Disponibles
 
-## What technologies are used for this project?
+- `npm run dev` - Inicia el servidor de desarrollo
+- `npm run build` - Construye la aplicación para producción
+- `npm run build:dev` - Construye en modo desarrollo
+- `npm run preview` - Previsualiza la build de producción
+- `npm run lint` - Ejecuta ESLint para verificar el código
+- `npm run deploy` - Despliega la aplicación usando GitHub Pages
 
-This project is built with:
+## Estructura del Proyecto
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```
+ni-un-diamas-landing/
+├── public/                 # Archivos estáticos públicos
+├── src/
+│   ├── components/        # Componentes reutilizables
+│   ├── pages/            # Páginas de la aplicación
+│   ├── lib/              # Utilidades y configuraciones
+│   └── main.tsx          # Punto de entrada de la aplicación
+├── dist/                 # Build de producción
+└── package.json         # Dependencias y scripts
+```
 
-## How can I deploy this project?
+## Despliegue
 
-Simply open [Lovable](https://lovable.dev/projects/2bc339fc-2221-42aa-8f59-ca3d5372cb0f) and click on Share -> Publish.
+El proyecto está configurado para desplegarse automáticamente en GitHub Pages:
 
-## Can I connect a custom domain to my Lovable project?
+```bash
+npm run deploy
+```
 
-Yes, you can!
+Este comando:
+1. Construye la aplicación
+2. Crea un archivo 404.html para el SPA routing
+3. Despliega en la rama gh-pages
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Contribución
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/nueva-caracteristica`)
+3. Commit tus cambios (`git commit -am 'Agregar nueva característica'`)
+4. Push a la rama (`git push origin feature/nueva-caracteristica`)
+5. Abre un Pull Request
+
+## Información de Versión
+
+- **Versión**: 1.0.0
+- **Licencia**: Privada
+- **Autor**: Equipo Ni Un Día Más
+
+## Soporte
+
+Para reportar bugs o solicitar nuevas características, por favor abre un issue en el repositorio del proyecto.
+
+---
+
+*Desarrollado con ❤️ para la causa de la justicia familiar y el derecho de los niños a mantener vínculos con ambos padres.*
