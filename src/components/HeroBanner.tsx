@@ -82,9 +82,9 @@ const HeroBanner = () => {
                 <p className="text-xs font-bold tracking-widest mb-4 opacity-90">
                   {slide.category}
                 </p>
-                <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
                   {slide.title}
-                </h2>
+                </h1>
                 <p className="text-lg md:text-xl mb-8 opacity-90">
                   {slide.subtitle}
                 </p>
