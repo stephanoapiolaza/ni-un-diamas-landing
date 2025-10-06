@@ -5,17 +5,20 @@ const slides = [
   {
     category: "FAMILIAS",
     title: "El Vínculo es un Derecho Fundamental",
-    subtitle: "Protegiendo la relación entre hijos y progenitores"
+    subtitle: "Protegiendo la relación entre hijos y progenitores",
+    backgroundImage: "/src/assets/familia_1.jpg"
   },
   {
     category: "JUSTICIA",
     title: "Protegemos a nuestros hijos",
-    subtitle: "Luchando contra la obstaculización de visitas"
+    subtitle: "Luchando contra la obstaculización de visitas",
+    backgroundImage: "/src/assets/familia_2.jpg"
   },
   {
     category: "UNIDOS",
     title: "Juntos por la justicia familiar",
-    subtitle: "Restaurando vínculos, defendiendo derechos"
+    subtitle: "Restaurando vínculos, defendiendo derechos",
+    backgroundImage: "/src/assets/familia_3.jpeg"
   }
 ];
 
@@ -64,9 +67,14 @@ const HeroBanner = () => {
             className={`absolute inset-0 transition-opacity duration-700 ${
               index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
+            style={{
+              backgroundImage: `url(${slide.backgroundImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
           >
-            {/* Background gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/80" />
+            {/* Background darkening overlay */}
+            <div className="absolute inset-0 bg-black/60" />
             
             {/* Content */}
             <div className="relative h-full container mx-auto px-4 flex items-end pb-20">
