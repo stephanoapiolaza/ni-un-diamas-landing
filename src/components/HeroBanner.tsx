@@ -1,41 +1,68 @@
 import { useState, useEffect } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
-const messages = [
-  "El Vínculo es un Derecho",
-  "Protegemos a nuestros hijos",
-  "Juntos por la justicia familiar"
+const slides = [
+  {
+    title: "El Vínculo es un Derecho",
+    subtitle: "Protegiendo la relación fundamental entre hijos y progenitores"
+  },
+  {
+    title: "Protegemos a nuestros hijos",
+    subtitle: "Luchando contra la obstaculización de visitas"
+  },
+  {
+    title: "Juntos por la justicia familiar",
+    subtitle: "Restaurando vínculos, defendiendo derechos"
+  }
 ];
 
 const HeroBanner = () => {
-  const [currentMessage, setCurrentMessage] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentMessage((prev) => (prev + 1) % messages.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
+  const [plugin] = useState(() => 
+    Autoplay({ delay: 5000, stopOnInteraction: false })
+  );
 
   return (
-    <section className="relative bg-primary text-primary-foreground py-32 px-4">
-      <div className="container mx-auto text-center">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 min-h-[4rem] transition-opacity duration-500">
-            {messages[currentMessage]}
-          </h2>
-          <div className="flex justify-center gap-2 mt-8">
-            {messages.map((_, index) => (
-              <div
-                key={index}
-                className={`h-2 w-2 rounded-full transition-all duration-300 ${
-                  index === currentMessage ? "bg-primary-foreground w-8" : "bg-primary-foreground/50"
-                }`}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
+    <section className="relative bg-primary text-primary-foreground">
+      <Carousel
+        plugins={[plugin]}
+        className="w-full"
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+      >
+        <CarouselContent>
+          {slides.map((slide, index) => (
+            <CarouselItem key={index}>
+              <div className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+                {/* Background overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-primary/80 z-10" />
+                
+                {/* Content */}
+                <div className="relative z-20 container mx-auto px-4 text-center">
+                  <div className="max-w-4xl mx-auto">
+                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
+                      {slide.title}
+                    </h2>
+                    <p className="text-xl md:text-2xl opacity-90 animate-fade-in">
+                      {slide.subtitle}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="left-4 bg-primary-foreground text-primary hover:bg-primary-foreground/90" />
+        <CarouselNext className="right-4 bg-primary-foreground text-primary hover:bg-primary-foreground/90" />
+      </Carousel>
     </section>
   );
 };

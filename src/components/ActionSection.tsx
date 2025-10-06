@@ -51,7 +51,7 @@ const ActionSection = () => {
           </div>
 
           {/* Hazte Socio */}
-          <div className="bg-primary text-primary-foreground p-8 rounded-sm">
+          <div id="hazte-socio" className="bg-primary text-primary-foreground p-8 rounded-sm">
             <div className="mb-6">
               <Shield className="h-12 w-12 mb-4" />
               <h3 className="text-2xl font-bold mb-2">Hazte Socio</h3>
