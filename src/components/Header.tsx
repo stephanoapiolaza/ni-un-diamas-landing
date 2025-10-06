@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { Mail, Instagram, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 
@@ -12,9 +12,17 @@ const Header = () => {
           
           <div className="flex items-center gap-6">
             <nav className="hidden md:flex items-center gap-4">
+              <a href="https://www.instagram.com/ni1diamas.cl/" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-muted-foreground transition-colors flex items-center gap-1">
+                <Instagram className="h-4 w-4" />
+                Instagram
+              </a>
+              <a href="https://www.youtube.com/@ni1diamas.cl" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-muted-foreground transition-colors flex items-center gap-1">
+                <Youtube className="h-4 w-4" />
+                YouTube
+              </a>
               <a href="mailto:contacto@ni1diamas.cl" className="text-sm font-medium hover:text-muted-foreground transition-colors flex items-center gap-1">
                 <Mail className="h-4 w-4" />
-                Mail
+                contacto@ni1diamas.cl
               </a>
             </nav>
             <Button asChild variant="default">

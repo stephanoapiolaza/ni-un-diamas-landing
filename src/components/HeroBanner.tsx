@@ -81,9 +81,9 @@ const HeroBanner = () => {
                   {slide.subtitle}
                 </p>
                 <Button 
-                  variant="destructive" 
+                  variant="secondary" 
                   size="lg"
-                  className="rounded-full px-8"
+                  className="rounded-sm px-8"
                 >
                   Leer Historia
                 </Button>
