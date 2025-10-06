@@ -67,10 +67,9 @@ const ActionSection = () => {
               </p>
               
               <div className="bg-primary-foreground/10 p-4 rounded-sm mt-6">
-                <p className="text-sm font-medium mb-2">Cuenta Corriente:  XXXX-XXXX-XXXX
-Banco:  Scotiabank
-Rut: 9.999.999-9
-Email: contacto@ni1diamas.cl</p>
+                <p className="text-sm font-medium mb-2">Cuenta Corriente:  XXXX-XXXX-XXXX 
+Banco:  Scotiabank 
+Rut: 9.999.999-9 Email: contacto@ni1diamas.cl</p>
                 <p className="text-xs opacity-90">Disponible para socios activos</p>
               </div>
               
