@@ -1,8 +1,6 @@
 import { Mail, Facebook, Instagram, Youtube } from "lucide-react";
-
 const Header = () => {
-  return (
-    <header className="border-b border-border">
+  return <header className="border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center">
@@ -25,18 +23,8 @@ const Header = () => {
           </div>
         </div>
         
-        <nav className="py-4 border-t border-border">
-          <ul className="flex gap-6">
-            <li>
-              <a href="#home" className="text-sm font-medium hover:text-muted-foreground transition-colors">
-                Home
-              </a>
-            </li>
-          </ul>
-        </nav>
+        
       </div>
-    </header>
-  );
+    </header>;
 };
-
 export default Header;
