@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="flex items-center gap-6">
             <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Youtube className="h-5 w-5" />
-              <span className="text-sm">@</span>
+              <span className="text-sm">@ni1diamas</span>
             </a>
           </div>
           
