@@ -1,24 +1,27 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import familia1 from "@/assets/familia_1.jpg";
+import familia2 from "@/assets/familia_2.jpg";
+import familia3 from "@/assets/familia_3.jpeg";
 
 const slides = [
   {
     category: "FAMILIAS",
     title: "El Vínculo es un Derecho Fundamental",
     subtitle: "Protegiendo la relación entre hijos y progenitores",
-    backgroundImage: "/src/assets/familia_1.jpg"
+    backgroundImage: familia1
   },
   {
     category: "JUSTICIA",
     title: "Protegemos a nuestros hijos",
     subtitle: "Luchando contra la obstaculización de visitas",
-    backgroundImage: "/src/assets/familia_2.jpg"
+    backgroundImage: familia2
   },
   {
     category: "UNIDOS",
     title: "Juntos por la justicia familiar",
     subtitle: "Restaurando vínculos, defendiendo derechos",
-    backgroundImage: "/src/assets/familia_3.jpeg"
+    backgroundImage: familia3
   }
 ];
 

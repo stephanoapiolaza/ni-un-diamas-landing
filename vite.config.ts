@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: './', // <- usar rutas relativas para assets en dist
+  base: '/ni-un-diamas-landing', // <- usar rutas relativas para assets en dist
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
