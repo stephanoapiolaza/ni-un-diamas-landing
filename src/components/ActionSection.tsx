@@ -68,21 +68,21 @@ const ActionSection = () => {
                     Defendamos a nuestros hijos
                   </p>
                   <p className="text-sm opacity-90 mt-6">
-                    No estás solo/a en esto. Al presentar tu denuncia, activas una red de apoyo comprometida a orientarte y a luchar para que tu voz sea escuchada.
+                    No estás solo/a en esto. Al presentar tu denuncia, activas una red de apoyo comprometida a orientarte y luchar para que tu voz sea escuchada.
                   </p>
                 </div>
                 <div className="space-y-4 my-8 text-foreground/90">
                   <div className="flex items-start gap-x-3">
                     <Check className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
-                    <span>Investigar quiénes están detrás de tu caso</span>
+                    <span>Investigamos quiénes están detrás de tu caso</span>
                   </div>
                   <div className="flex items-start gap-x-3">
                     <Check className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
-                    <span>Ver si tiene reclamos anteriores</span>
+                    <span>Veremos si tienen reclamos anteriores</span>
                   </div>
                   <div className="flex items-start gap-x-3">
                     <Check className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
-                    <span>Informamos orientándote en el proceso</span>
+                    <span>Te orientamos en este proceso</span>
                   </div>
                 </div>
               </div>
@@ -139,8 +139,8 @@ const ActionSection = () => {
                   </div>
                 </form>
                 <Button type="submit"
-                        variant="secondary"
-                        className="w-full mt-4" disabled={isSubmitting}>
+                        variant="destructive"
+                        className="w-full mt-4 bg-yellow-400 hover:bg-yellow-500 text-black" disabled={isSubmitting}>
                   {isSubmitting ? "Enviando mi apoyo..." : "Ser Socio NI1Día+"}
                 </Button>
                 {submitMessage && (

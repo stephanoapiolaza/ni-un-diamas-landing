@@ -8,7 +8,7 @@ const slides = [
   {
     title: () => (
         <>
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-8xl font-bold mb-4">
+          <h1 className="font-serif text-5xl md:text-6xl lg:text-8xl font-bold">
             NO+ <br/>  <strong className="font-black">LUCRO</strong>  <label className="text-xl md:text-2xl lg:text-3xl  tracking-tighter mb-8 opacity-90 font-extralight">
             CON NUESTROS HIJOS
           </label>
@@ -67,11 +67,11 @@ const HeroBanner = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    // const interval = setInterval(() => {
-    //   setCurrentSlide((prev) => (prev + 1) % slides.length);
-    // }, 6000);
-    //
-    // return () => clearInterval(interval);
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
