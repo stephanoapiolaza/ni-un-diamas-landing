@@ -8,8 +8,8 @@ const slides = [
   {
     title: () => (
         <>
-          <h1 className="text-5xl md:text-6xl lg:text-8xl font-extrabold mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
-            NO+ <br/> LUCRO  <label className="text-xl md:text-2xl lg:text-3xl mb-8 opacity-90 font-extralight" style={{ fontFamily: 'Playfair Display, serif' }}>
+          <h1 className="font-serif text-5xl md:text-6xl lg:text-8xl font-bold mb-4">
+            NO+ <br/>  <strong className="font-black">LUCRO</strong>  <label className="text-xl md:text-2xl lg:text-3xl  tracking-tighter mb-8 opacity-90 font-extralight">
             CON NUESTROS HIJOS
           </label>
           </h1>
@@ -23,12 +23,12 @@ const slides = [
   },
   {
     title: () => (
-        <h1 className="text-4xl md:text-6xl lg:text-8xl font-extrabold mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
+        <h1 className="font-serif text-5xl md:text-6xl lg:text-8xl font-bold mb-4">
         NO
       </h1>
     ),
     subtitle: () => (
-        <label className="text-xl md:text-4xl mb-8 opacity-90 font-semibold" style={{ fontFamily: 'Playfair Display, serif' }}>
+        <label className="font-serif text-xl md:text-4xl mb-8  tracking-tighter opacity-90 font-semibold">
           SIGAS DAÑANDO A LO <br/> QUE DICES MÁS AMAR
         </label>
     ),
@@ -40,16 +40,16 @@ const slides = [
   {
     title: () => (
         <>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
+            <h1 className="font-serif text-5xl md:text-6xl lg:text-8xl font-bold mb-4">
             NO uses
           </h1>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
+            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold mb-4">
             A NUESTROS HIJOS
           </h1>
         </>
     ),
     subtitle: () => (
-        <label className="text-lg md:text-xl lg:text-3xl mb-8 opacity-90 font-extralight" style={{ fontFamily: 'Playfair Display, serif' }}>
+        <label className="font-serif text-lg md:text-xl lg:text-3xl  tracking-tighter mb-8 opacity-90 font-extralight">
           COMO MONEDA DE CAMBIO
         </label>
     ),
@@ -118,10 +118,12 @@ const HeroBanner = () => {
             <div className="relative h-full flex">
               <div className="w-full lg:w-3/4 container mx-auto px-8 lg:px-28 flex justify-center items-start flex-col text-left">
                 {slide.title()}
-                {slide.subtitle()}
-                <p className="text-xl md:text-5xl tracking-widest opacity-90 text-yellow-400 mb-8" style={{ fontFamily: 'Playfair Display, serif' }}>
-                  {slide.category}
-                </p>
+                  <div>
+                      {slide.subtitle()}
+                      <p className="font-display text-xl md:text-5xl font-extrabold tracking-tighter opacity-90 text-yellow-400 mb-8 mt-4">
+                          {slide.category}
+                      </p>
+                  </div>
                 <Button
                   variant="secondary"
                   size="lg"
@@ -132,13 +134,13 @@ const HeroBanner = () => {
               </div>
               { /* Logo */ }
               <div className="hidden lg:flex w-1/4 container mx-auto justify-center items-start flex-col">
-                <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
+                <h1 className="font-serif text-5xl md:text-6xl lg:text-8xl font-bold mb-4 leading-tight">
                   NI1
                 </h1>
-                <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
+                <h1 className="font-serif text-5xl md:text-6xl lg:text-8xl font-bold mb-4 leading-tight">
                   DÍA+
                 </h1>
-                <p className="text-lg md:text-xl mb-8 opacity-90 font-bold" style={{ fontFamily: 'Playfair Display, serif' }}>
+                <p className="font-heading text-lg md:text-xl mb-8 opacity-90 font-bold">
                   Sin nuestros hijos
                 </p>
               </div>

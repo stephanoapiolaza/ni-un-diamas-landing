@@ -16,6 +16,8 @@ export default {
       fontFamily: {
         heading: ['Montserrat', 'sans-serif'],
         body: ['Lato', 'sans-serif'],
+        serif: ['Playfair Display', 'serif'], // NUEVA - Para títulos grandes
+        display: ['Oswald', 'sans-serif'],    // NUEVA - Para textos en amarillo
       },
       colors: {
         border: "hsl(var(--border))",
