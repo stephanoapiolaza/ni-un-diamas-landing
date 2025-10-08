@@ -18,6 +18,7 @@ const slides = [
     subtitle: () => null,
     category: "NO SON UN NEGOCIO",
     buttonText: "Conoce la Causa",
+    link: "https://www.instagram.com/reel/DOvzorSkXZF/?igsh=MTNhdnQ2Ym5qM3Q4aQ==",
     navbarText: "No son un negocio",
     backgroundImage: familia1
   },
@@ -34,6 +35,7 @@ const slides = [
     ),
     category: "EL DAÑO ES IRREVERSIBLE",
     buttonText: "Ver Historia",
+    link: "https://www.instagram.com/reel/DOvUF7rDjy8/?igsh=bm9ndHdzYmhnMjM4",
     navbarText: "El daño es irreversible",
     backgroundImage: familia2
   },
@@ -55,6 +57,7 @@ const slides = [
     ),
     category: "CUIDEMOS SU SALUD MENTAL",
     buttonText: "Actúa Ahora",
+    link: "https://www.instagram.com/reel/DOixDK8kTC_/?igsh=MTZhcGphM2g0Y2podQ==",
     navbarText: "Cuidemos su salud mental",
     backgroundImage: familia3
   }
@@ -128,6 +131,7 @@ const HeroBanner = () => {
                   variant="secondary"
                   size="lg"
                   className="rounded-sm px-8"
+                  onClick={() => window.open(slide.link, "_blank")}
                 >
                   {slide.buttonText}
                 </Button>
