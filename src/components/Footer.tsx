@@ -1,4 +1,4 @@
-import { Instagram, Youtube, Mail } from "lucide-react";
+import {Instagram, Youtube, Mail, Linkedin} from "lucide-react";
 const Footer = () => {
   return <footer className="bg-primary text-primary-foreground py-12 px-4">
       <div className="container mx-auto">
@@ -24,10 +24,29 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        
-        <div className="mt-8 pt-8 border-t border-primary-foreground/20 text-center">
-          <p className="text-sm opacity-80">© 2025 Ni Un Día Más</p>
-          <p className="text-sm opacity-80">Todos los derechos reservados.</p>
+
+        {/* --- ✅ 2. Sección inferior reestructurada con Flexbox --- */}
+        <div className="mt-8 pt-8 border-t border-primary-foreground/20 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-opacity-80 opacity-80">
+
+          {/* Columna Izquierda */}
+          <div className="text-center sm:text-left">
+          </div>
+
+          {/* Columna Central */}
+          <div className="flex justify-center items-center text-center md:ml-36">
+            <div>
+              <p>© 2025 Ni Un Día Más</p>
+              <p>Todos los derechos reservados.</p>
+            </div>
+          </div>
+
+          {/* Columna Derecha */}
+          <div className="text-center md:text-right">
+            <a href="https://wa.me/56933251730" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <span>Creado por Stephano Apiolaza</span>
+            </a>
+          </div>
+
         </div>
       </div>
     </footer>;
