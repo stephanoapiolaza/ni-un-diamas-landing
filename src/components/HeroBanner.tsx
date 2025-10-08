@@ -131,7 +131,7 @@ const HeroBanner = () => {
                   variant="secondary"
                   size="lg"
                   className="rounded-sm px-8"
-                  onClick={() => window.open(slide.link, "_blank")}
+                  onClick={() => window.open(slide.link, "_blank", "noopener,noreferrer")}
                 >
                   {slide.buttonText}
                 </Button>

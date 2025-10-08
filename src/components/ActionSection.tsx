@@ -7,7 +7,6 @@ import {Check, Eye, Shield} from "lucide-react";
 import emailjs from '@emailjs/browser';
 
 const ActionSection = () => {
-  const [isCopied, setIsCopied] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
 
@@ -46,33 +45,6 @@ const ActionSection = () => {
     }
   };
 
-  const handleCopyBankingData = async () => {
-    const bankingData = "Banco: Scotiabank | RUT: 9.999.999-9 | Tipo: Cuenta Corriente | Cuenta: 12345678 | Nombre: Rodrigo Smart";
-    
-    try {
-      await navigator.clipboard.writeText(bankingData);
-      setIsCopied(true);
-      // Volver al texto original después de 2 segundos
-      setTimeout(() => setIsCopied(false), 2000);
-    } catch (err) {
-      console.error("Error al copiar al portapapeles:", err);
-      // Fallback para navegadores que no soportan clipboard API
-      const textArea = document.createElement("textarea");
-      textArea.value = bankingData;
-      document.body.appendChild(textArea);
-      textArea.focus();
-      textArea.select();
-      try {
-        document.execCommand("copy");
-        setIsCopied(true);
-        setTimeout(() => setIsCopied(false), 2000);
-      } catch (fallbackErr) {
-        console.error("Error en el fallback de copia:", fallbackErr);
-      }
-      document.body.removeChild(textArea);
-    }
-  };
-
   return (
       <section className="py-16 px-4 bg-muted">
         <div className="container mx-auto max-w-6xl">
@@ -96,8 +68,7 @@ const ActionSection = () => {
                     Defendamos a nuestros hijos
                   </p>
                   <p className="text-sm opacity-90 mt-6">
-                    Nuestra cuenta corriente está abierta con número y clave disponibles para
-                    total transparencia en el manejo de fondos.
+                    No estás solo/a en esto. Al presentar tu denuncia, activas una red de apoyo comprometida a orientarte y a luchar para que tu voz sea escuchada.
                   </p>
                 </div>
                 <div className="space-y-4 my-8 text-foreground/90">
@@ -123,7 +94,7 @@ const ActionSection = () => {
                 </p>
                 <Button
                     className="w-full"
-                    onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSfrTCwJHAKzoGEqRNOuDL2BHb0PNjtKHndrW-aBKx3x8_sFAQ/viewform", "_blank")}
+                    onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSfrTCwJHAKzoGEqRNOuDL2BHb0PNjtKHndrW-aBKx3x8_sFAQ/viewform", "_blank", "noopener,noreferrer")}
                 >
                   Presenta tu Denuncia
                 </Button>
