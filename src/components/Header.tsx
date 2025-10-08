@@ -1,13 +1,25 @@
 import { Mail, Instagram, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
+import CountUp from "react-countup";
+
+const FollowerCounter = () => {
+  return (
+      <div className="text-left">
+        <div className="text-3xl font-bold font-display">
+          <CountUp end={160} duration={2.5} suffix="K" />
+        </div>
+        <p className="text-xs tracking-wider text-muted-foreground">SEGUIDORES EN REDES</p>
+      </div>
+  );
+};
 
 const Header = () => {
   return <header className="border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center">
-            <img src={logo} alt="Ni Un Día Más" className="h-12 w-auto" />
+            <FollowerCounter />
           </div>
           
           <div className="flex items-center gap-6">
