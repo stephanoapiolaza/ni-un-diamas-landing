@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Eye, Shield } from "lucide-react";
+import {Check, Eye, Shield} from "lucide-react";
 import emailjs from '@emailjs/browser';
 
 const ActionSection = () => {
@@ -36,11 +36,11 @@ const ActionSection = () => {
         templateParams
       );
       
-      setSubmitMessage("¡Denuncia enviada exitosamente!");
+      setSubmitMessage("¡Solo falta un paso para ser socio, te responderemos a la brevedad!");
       form.reset();
     } catch (error) {
       console.error('Error sending email:', error);
-      setSubmitMessage("Error al enviar la denuncia. Por favor, intenta nuevamente.");
+      setSubmitMessage("Error al enviar la solicitud de socio de NI1Día+. Por favor, intenta nuevamente.");
     } finally {
       setIsSubmitting(false);
     }
@@ -84,38 +84,40 @@ const ActionSection = () => {
               <p className="text-sm text-muted-foreground mb-4">
                 Comparte tu caso de manera confidencial
               </p>
-            </div>
-            
-            <form onSubmit={handleComplaintSubmit} className="space-y-4">
-              <div>
-                <Label htmlFor="name">Nombre</Label>
-                <Input id="name" name="name" type="text" required />
+
+              <p className="text-sm opacity-90">
+                Nuestra cuenta corriente está abierta con número y clave disponibles para
+                total transparencia en el manejo de fondos.
+              </p>
+
+              {/* ✅ LISTA MEJORADA: Usamos un div con flexbox y el ícono de Check */}
+              <div className="space-y-4 my-8 text-foreground/90">
+                <div className="flex items-start gap-x-3">
+                  <Check className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
+                  <span>Investigar quiénes están detrás de tu caso</span>
+                </div>
+                <div className="flex items-start gap-x-3">
+                  <Check className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
+                  <span>Ver si tiene reclamos anteriores</span>
+                </div>
+                <div className="flex items-start gap-x-3">
+                  <Check className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
+                  <span>Informamos orientándote en el proceso</span>
+                </div>
               </div>
-              
-              <div>
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" name="email" type="email" required />
-              </div>
-              
-              <div>
-                <Label htmlFor="message">Tu caso</Label>
-                <Textarea id="message" name="message" rows={4} required />
-              </div>
-              
-              <Button type="submit" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? "Enviando..." : "Enviar Denuncia"}
+
+              <Button
+                  className="w-full mt-6"
+                  onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSfrTCwJHAKzoGEqRNOuDL2BHb0PNjtKHndrW-aBKx3x8_sFAQ/viewform", "_blank")}
+              >
+                Presenta tu Denuncia
               </Button>
-              
-              {submitMessage && (
-                <p className={`text-sm text-center ${submitMessage.includes("Error") ? "text-red-500" : "text-green-500"}`}>
-                  {submitMessage}
-                </p>
-              )}
-              
-              <p className="text-xs text-muted-foreground text-center">
+              <p className="text-xs text-muted-foreground text-center mt-2">
                 Ver más información sobre el proceso
               </p>
-            </form>
+            </div>
+            
+
           </div>
 
           {/* Hazte Socio */}
@@ -136,23 +138,35 @@ const ActionSection = () => {
                 Nuestra cuenta corriente está abierta con número y clave disponibles para 
                 total transparencia en el manejo de fondos.
               </p>
-              
-              <div className="bg-primary-foreground/10 p-4 rounded-sm mt-6">
-                <p className="text-sm font-medium mb-2">Cuenta Corriente: XXXX-XXXX-XXXX</p>
-                <p className="text-sm font-medium mb-2">Banco: Scotiabank</p>
-                <p className="text-sm font-medium mb-2">Nombre: Rodrigo Smart</p>
-                <p className="text-sm font-medium mb-2">RUT: 9.999.999-9</p>
-                <p className="text-sm font-medium mb-2">Email: contacto@ni1diamas.cl</p>
-                <p className="text-xs opacity-90">Disponible para socios activos</p>
-              </div>
-              
-              <Button 
-                variant="secondary" 
-                className="w-full mt-6"
-                onClick={handleCopyBankingData}
-              >
-                {isCopied ? "Copiado" : "Copiar Datos Bancarios"}
-              </Button>
+
+              <form onSubmit={handleComplaintSubmit} className="space-y-4">
+                <div>
+                  <Label htmlFor="name">Nombre</Label>
+                  <Input id="name" name="name" type="text" className="text-black" required />
+                </div>
+
+                <div>
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" name="email" type="email" className="text-black" required />
+                </div>
+
+                <div>
+                  <Label htmlFor="message">Mensaje de Apoyo</Label>
+                  <Textarea id="message" name="message" className="text-black" rows={4} required />
+                </div>
+
+                <Button type="submit"
+                        variant="secondary"
+                        className="w-full" disabled={isSubmitting}>
+                  {isSubmitting ? "Enviando mi apoyo..." : "Ser Socio NI1Día+"}
+                </Button>
+
+                {submitMessage && (
+                    <p className={`text-sm text-center ${submitMessage.includes("Error") ? "text-red-500" : "text-green-500"}`}>
+                      {submitMessage}
+                    </p>
+                )}
+              </form>
             </div>
           </div>
         </div>
