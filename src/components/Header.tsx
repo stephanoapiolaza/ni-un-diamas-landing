@@ -16,9 +16,9 @@ const Header = () => {
                 <Instagram className="h-4 w-4" />
                 @ni1diamas_
               </a>
-              <a href="https://www.youtube.com/@ni1diamas" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-muted-foreground transition-colors flex items-center gap-1">
+              <a href="https://www.youtube.com/@Ni1D%C3%ADaM%C3%A1ss" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-muted-foreground transition-colors flex items-center gap-1">
                 <Youtube className="h-4 w-4" />
-                @ni1diamas
+                @Ni1DíaMáss
               </a>
               <a href="mailto:contacto@ni1diamas.cl?subject=Quiero%20apoyo%20para%20fortalecer%20el%20vínculo%20con%20mi%20hijo" className="text-sm font-medium hover:text-muted-foreground transition-colors flex items-center gap-1">
                 <Mail className="h-4 w-4" />
